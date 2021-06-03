@@ -1,0 +1,49 @@
+﻿<Window x:Class="EustonLeisureService.msgForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EustonLeisureService"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="624" Width="925" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="#FF019D9D">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="376*"/>
+            <ColumnDefinition Width="333*"/>
+            <ColumnDefinition Width="216*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="25,125,0,25" Grid.ColumnSpan="2" Grid.Row="0" Width="450" HorizontalAlignment="Left">
+            <Label HorizontalContentAlignment="Center" FontSize="25" Foreground="#FFF" Margin="10">Message</Label>
+            <Border Background="White" Margin="10,0,9.6,0" CornerRadius="5" Height="457">
+                <StackPanel Margin="25">
+                    <Label>Message ID:</Label>
+                    <TextBox x:Name="headerBox" MaxLength="10"></TextBox>
+                    <Label>Body:</Label>
+                    <TextBox BorderBrush="Black" TextWrapping="Wrap" Height="80" x:Name="bodyBox" AcceptsReturn="True" />
+                    <Button x:Name="sendBtn" Margin="40 35" Click="sendBtn_Click">Send Message</Button>
+                    <Button x:Name="finishBtn" Margin="40 0" Click="finishBtn_Click">Finish Session</Button>
+                    <Button x:Name="backBtn" Margin="40 35" Click="backBtn_Click">Back</Button>
+                </StackPanel>
+
+            </Border>
+        </StackPanel>
+        <StackPanel Margin="0,126,24.8,25" Grid.ColumnSpan="2" Width="425" HorizontalAlignment="Right" Grid.Column="1">
+            <Label HorizontalContentAlignment="Center" FontSize="25" Foreground="#FFF" Margin="10">Last Added Message</Label>
+            <Border Background="White" Margin="10 0" CornerRadius="5">
+                <StackPanel Margin="25">
+                    <Label>Message Type</Label>
+                    <TextBox IsReadOnly="True" x:Name="processedMsgType"></TextBox>
+                    <Label>Message ID:</Label>
+                    <TextBox BorderBrush="Black" TextWrapping="Wrap" IsReadOnly="True" x:Name="processedMsgHeader"/>
+                    <Label>Body:</Label>
+                    <TextBox BorderBrush="Black" TextWrapping="Wrap" Height="80" IsReadOnly="True" x:Name="processedMsgBody"/>
+                    <Button x:Name="viewBtn" Margin="40 20" Click="viewBtn_Click">View Messages</Button>
+                </StackPanel>
+
+            </Border>
+        </StackPanel>
+    </Grid>
+
+
+</Window>
